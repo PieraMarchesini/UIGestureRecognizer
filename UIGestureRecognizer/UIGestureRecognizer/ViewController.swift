@@ -7,12 +7,53 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
+    @IBOutlet var monkeyPan: UIPanGestureRecognizer!
+    @IBOutlet var bananaPan: UIPanGestureRecognizer!
+    
+    var chompPlayer: AVAudioPlayer? = nil
+    
+    func loadSound(filename: String) -> AVAudioPlayer? {
+        guard let data = NSDataAsset(name: filename) else {
+            print("Sound file not found")
+            return nil
+        }
+        
+        do {
+            let player = try AVAudioPlayer(data: data.data)
+            player.prepareToPlay()
+            return player
+        } catch {
+            print("Error: \(error)")
+            return nil
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //Create a filtered array of just the monkey and banana image views.
+        let filteredSubviews = self.view.subviews.filter({
+            $0.isKind(of: UIImageView.self) })
+        
+        //Cycle through the filtered array.
+        for view in filteredSubviews  {
+            //Create a UITapGestureRecognizer for each image view, specifying the callback. This is an alternative way of adding gesture recognizers. Previously you added the recognizers to the storyboard.
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(recognizer:)))
+            //Set the delegate of the recognizer programatically, and add the recognizer to the image view.
+            recognizer.delegate = self
+            view.addGestureRecognizer(recognizer)
+            
+            //Now the tap gesture recognizer will only get called if no pan is detected
+            recognizer.require(toFail: monkeyPan)
+            recognizer.require(toFail: bananaPan)
+            
+            //TODO: Add a custom gesture recognizer too
+        }
+        self.chompPlayer = self.loadSound(filename: "chomp")
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,9 +112,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    //This function tells the gesture recognizer whether it is OK to recognize a gesture if another (given) recognizer has already detected a gesture. The default implementation always returns false – here you switch it to always return true.
     @objc func gestureRecognizer(_: UIGestureRecognizer,
                                  shouldRecognizeSimultaneouslyWith shouldRecognizeSimultaneouslyWithGestureRecognizer:UIGestureRecognizer) -> Bool {
         return true
+    }
+    
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        self.chompPlayer?.play()
     }
 }
 

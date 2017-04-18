@@ -13,8 +13,7 @@
 		65381AF21EA543CC0035B221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65381AF11EA543CC0035B221 /* Assets.xcassets */; };
 		65381AF51EA543CC0035B221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65381AF31EA543CC0035B221 /* LaunchScreen.storyboard */; };
 		65381B001EA543CD0035B221 /* UIGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65381AFF1EA543CD0035B221 /* UIGestureRecognizerTests.swift */; };
-		65381B1E1EA544C20035B221 /* chomp.caf in Resources */ = {isa = PBXBuildFile; fileRef = 65381B181EA544C20035B221 /* chomp.caf */; };
-		65381B1F1EA544C20035B221 /* hehehe1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 65381B191EA544C20035B221 /* hehehe1.caf */; };
+		65381B231EA596C70035B221 /* TickleGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65381B221EA596C70035B221 /* TickleGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +37,7 @@
 		65381AFB1EA543CC0035B221 /* UIGestureRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIGestureRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65381AFF1EA543CD0035B221 /* UIGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGestureRecognizerTests.swift; sourceTree = "<group>"; };
 		65381B011EA543CD0035B221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65381B181EA544C20035B221 /* chomp.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chomp.caf; sourceTree = "<group>"; };
-		65381B191EA544C20035B221 /* hehehe1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hehehe1.caf; sourceTree = "<group>"; };
+		65381B221EA596C70035B221 /* TickleGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickleGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +79,9 @@
 		65381AE91EA543CC0035B221 /* UIGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				65381B181EA544C20035B221 /* chomp.caf */,
-				65381B191EA544C20035B221 /* hehehe1.caf */,
 				65381AEA1EA543CC0035B221 /* AppDelegate.swift */,
 				65381AEC1EA543CC0035B221 /* ViewController.swift */,
+				65381B221EA596C70035B221 /* TickleGestureRecognizer.swift */,
 				65381AEE1EA543CC0035B221 /* Main.storyboard */,
 				65381AF11EA543CC0035B221 /* Assets.xcassets */,
 				65381AF31EA543CC0035B221 /* LaunchScreen.storyboard */,
@@ -187,11 +184,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65381B1E1EA544C20035B221 /* chomp.caf in Resources */,
 				65381AF51EA543CC0035B221 /* LaunchScreen.storyboard in Resources */,
 				65381AF21EA543CC0035B221 /* Assets.xcassets in Resources */,
 				65381AF01EA543CC0035B221 /* Main.storyboard in Resources */,
-				65381B1F1EA544C20035B221 /* hehehe1.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65381AED1EA543CC0035B221 /* ViewController.swift in Sources */,
+				65381B231EA596C70035B221 /* TickleGestureRecognizer.swift in Sources */,
 				65381AEB1EA543CC0035B221 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
